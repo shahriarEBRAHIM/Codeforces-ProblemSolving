@@ -15,7 +15,6 @@
     int main() {
         long int x;
         long int s = 0;
-        long int temp = 0;
         scanf("%ld", &x);
         if (x <= 5) {
             printf("1");
