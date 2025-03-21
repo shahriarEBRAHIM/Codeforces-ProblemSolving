@@ -22,12 +22,11 @@
         }
         else if (x > 5) {
             s = x / 5;
-            temp = s;
-            if (s % 5 == 0) {
+            if (x % 5 == 0) {
                 printf("%ld\n", s);
             }
             else {
-                printf("%ld\n", temp+1);
+                printf("%ld\n", s+1);
         }
         
         }
