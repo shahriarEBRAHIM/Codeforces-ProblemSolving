@@ -15,17 +15,19 @@
     int main() {
         long int x;
         long int s = 0;
+        long int temp = 0;
         scanf("%ld", &x);
         if (x <= 5) {
             printf("1");
         }
         else if (x > 5) {
             s = x / 5;
+            temp = s;
             if (s % 5 == 0) {
                 printf("%ld\n", s);
             }
             else {
-                printf("%ld\n", s+1);
+                printf("%ld\n", temp+1);
         }
         
         }
