@@ -4,27 +4,38 @@
  * █  Name    : Muhammad Shahriar Ebrahim      █ *
  * █  Country : Bangladesh                     █ *
  * █  Language: C                              █ *
- * █  Problem : A Beautiful Year               █ *
- * █  Date    : 19/03/2025                     █ *
+ * █  Problem : Panoramix's Prediction         █ *
+ * █  Date    : 20/03/2025                     █ *
  * █                                           █ *
  * █████████████████████████████████████████████ *
  * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #include <stdio.h>
 
-    int main () {
-        int year, d1, d2, d3, d4=0;
-        scanf("%d", &year);
-        while (1) {
-            year++;
-            d1 = year / 1000;
-            d2 = year / 100 % 10;
-            d3 = year / 10 % 10;
-            d4 = year % 10;
-            if (d1 != d2 && d1 != d3 && d1 != d4 && d2 != d3 && d2 != d4 && d3 != d4) {
-                break;
+    int main() {
+        int n,m,pv,fp=0;
+        scanf("%d %d", &n, &m);
+        int i=n;
+        int j=1;
+        while (i<m) {
+            i++;
+            j=1;
+            pv=0;
+            while (j<=i) {
+                if (i%j==0) {
+                    pv++;
+                }
+                j++;
+            }
+            if (pv==2) {
+                fp=i;
             }
         }
-        printf("%d\n", year);
-        return 0;
+            if (fp==m) {
+                printf("YES\n");
+            }
+            else {
+                printf("NO\n");
+            }
+            return 0;
     }
