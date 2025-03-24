@@ -1,17 +1,27 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -O2
+# Compiler and flags
+CC := gcc
+CFLAGS := -Wall -Wextra -Werror -O2
 
-SRCS := $(shell find . -type f -name "*.c")
-EXES := $(notdir $(SRCS:.c=))
+# Directories
+SRC_DIR := .
+BUILD_DIR := build
 
+# Find all C source files in SRC_DIR and its subdirectories
+SRCS := $(shell find $(SRC_DIR) -type f -name "*.c")
+# Map source files to corresponding executables in the BUILD_DIR
+EXES := $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%,$(SRCS))
+
+# Default target: build all executables
 all: $(EXES)
 
-$(EXES): %: %.c
+# Rule to compile source files to executables
+$(BUILD_DIR)/%: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $< -o $@
+	chmod +x $@
 
-.PHONY: all clean rebuild
+.PHONY: all clean
 
+# Clean up build artifacts
 clean:
-	rm -f $(EXES)
-
-rebuild: clean all
+	rm -rf $(BUILD_DIR)
