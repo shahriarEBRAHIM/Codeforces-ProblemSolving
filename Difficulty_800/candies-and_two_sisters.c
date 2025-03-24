@@ -1,21 +1,36 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+ * █████████████████████████████████████████████ *
+ * █                                           █ *
+ * █  Name    : Muhammad Shahriar Ebrahim      █ *
+ * █  Country : Bangladesh                     █ *
+ * █  Language: C                              █ *
+ * █  Problem : Candies and Two Sisters        █ *
+ * █  Date    : 25/03/2025                     █ *
+ * █                                           █ *
+ * █████████████████████████████████████████████ *
+ * * * * * * * * * * * * * * * * * * * * * * * * */
+
 #include <stdio.h>
 
-    int main() {
-        long int t, i = 0;
-        long long int n;
-        scanf("%ld", &t);
-        do {
-            scanf("%lld", &n);
-            long long int b = n / 2;
-            long long int a = n - b;
-            long long int c = 0;
-            while (a > b && b > 0) {
-                c++;
-                a++;
-                b--;
-            }
-            printf("%lld\n", c);
-            i++;
-        } while (i < t);
-        return 0;
-    }
+int main()
+{
+    long int t, i = 0;
+    long long int n;
+    scanf("%ld", &t);
+    do
+    {
+        scanf("%lld", &n);
+        long long int b = n / 2;
+        long long int a = n - b;
+        if (n % 2 == 0)
+        {
+            printf("%lld\n", b-1);
+        }
+        else
+        {
+            printf("%lld\n", b);
+        }
+        i++;
+    } while (i < t);
+    return 0;
+}
