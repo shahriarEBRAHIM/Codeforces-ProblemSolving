@@ -1,3 +1,15 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+ * █████████████████████████████████████████████ *
+ * █                                           █ *
+ * █  Name    : Muhammad Shahriar Ebrahim      █ *
+ * █  Country : Bangladesh                     █ *
+ * █  Language: C                              █ *
+ * █  Problem : Vasya The Hipster              █ *
+ * █  Date    : 26/03/2025                     █ *
+ * █                                           █ *
+ * █████████████████████████████████████████████ *
+ * * * * * * * * * * * * * * * * * * * * * * * * */
+
 #include <stdio.h>
 
     int main () {
